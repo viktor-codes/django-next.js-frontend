@@ -1,5 +1,7 @@
 "use client"
 
+// import { cookies } from "next/headers"
+
 const LOGIN_URL = "http://127.0.0.1:8001/api/token/pair"
 
 
@@ -22,6 +24,7 @@ export default function Page(){
             console.log(data)
             if (response.ok){
                 console.log("logged in")
+
         } 
 
     }
