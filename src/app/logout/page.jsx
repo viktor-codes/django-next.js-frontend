@@ -1,5 +1,7 @@
 "use client"
 
+import { useRouter } from "next/navigation"
+
 // import { cookies } from "next/headers"
 
 
@@ -7,6 +9,8 @@ const LOGOUT_URL = "/api/logout/"
 
 
 export default function Page(){
+
+    const router = useRouter()
     
     async function handleClick (event) {
         event.preventDefault()
@@ -18,9 +22,9 @@ export default function Page(){
             body: ""
         }
         const response = await fetch(LOGOUT_URL, requestOptions)
-        const data = await response.json()
         if (response.ok) {
-            console.log("logged in")
+            console.log("logged out")
+            router.replace("/login")
     }
 }
 

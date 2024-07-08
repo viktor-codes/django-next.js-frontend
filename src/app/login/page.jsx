@@ -1,12 +1,13 @@
 "use client"
 
-// import { cookies } from "next/headers"
-
+import { useRouter } from "next/navigation"
 
 const LOGIN_URL = "/api/login/"
 
 
 export default function Page(){
+
+    const router = useRouter()
     
     async function handleSubmit (event) {
         event.preventDefault()
@@ -22,21 +23,12 @@ export default function Page(){
             body: jsonData
         }
         const response = await fetch(LOGIN_URL, requestOptions)
-        let data = {}
-        try {
-          data = await response.json()
-        } catch (error) {
-          
-        }
-        // const data = await response.json()
         if (response.ok) {
             console.log("logged in")
-        } else {
-          console.log("not logged in")
-        }
+            router.replace("/")
     }
 
-    
+}
 
     return (
         <div className="h-[95vh]">
