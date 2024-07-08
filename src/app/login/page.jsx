@@ -7,6 +7,7 @@ const LOGIN_URL = "/api/login/"
 
 
 export default function Page(){
+    
     async function handleSubmit (event) {
         event.preventDefault()
         console.log(event, event.target)
@@ -31,7 +32,7 @@ export default function Page(){
         if (response.ok) {
             console.log("logged in")
         } else {
-          console.log(await response.json())
+          console.log("not logged in")
         }
     }
 
