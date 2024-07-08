@@ -2,7 +2,7 @@
 
 import { NextResponse } from "next/server"
 
-import { setRefreshToken, setToken } from "@/app/lib/auth";
+import { setRefreshToken, setToken } from "@/lib/auth";
 
 
 const DJANGO_API_LOGIN_URL = "http://localhost:8001/api/token/pair"
